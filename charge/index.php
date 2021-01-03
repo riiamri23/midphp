@@ -21,6 +21,7 @@ $api_url = $is_production ?
 
 $request_body = file_get_contents('php://input');
 header('Content-Type: application/json');
+echo $request_body;
 
 $charge_result = chargeAPI($api_url, $server_key, $request_body);
 
