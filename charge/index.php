@@ -21,7 +21,6 @@ $api_url = $is_production ?
 
 $request_body = file_get_contents('php://input');
 header('Content-Type: application/json');
-echo $request_body;
 
 $charge_result = chargeAPI($api_url, $server_key, $request_body);
 
@@ -48,7 +47,7 @@ function chargeAPI($api_url, $server_key, $request_body){
   );
   curl_setopt_array($ch, $curl_options);
   $result = array(
-    'body' => curl_exec($ch),
+    'body' => $request_body,
     'http_code' => curl_getinfo($ch, CURLINFO_HTTP_CODE),
   );
   return $result;
