@@ -23,7 +23,7 @@ $api_url = $is_production ?
 $request_body = file_get_contents('php://input');
 header('Content-Type: application/json');
 
-return $request_body;
+return 'hello';
 $charge_result = chargeAPI($api_url, $server_key, $request_body);
 
 http_response_code($charge_result['http_code']);
