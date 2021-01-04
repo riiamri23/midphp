@@ -29,7 +29,7 @@ $charge_result = chargeAPI($api_url, $server_key, $request_body);
 // set the response http status code
 http_response_code($charge_result['http_code']);
 // then print out the response body
-print_r($charge_result);
+echo $charge_result['body']->redirect_url;
 
 /**
  * call charge API using Curl
