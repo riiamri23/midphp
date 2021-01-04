@@ -31,6 +31,8 @@ echo $charge_result['body'];
 
 
 function chargeAPI($api_url, $server_key, $request_body){
+
+  return $request_body;
   $ch = curl_init();
   $curl_options = array(
     CURLOPT_URL => $api_url,
